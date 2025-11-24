@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeoVeo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <span class="fw-semibold">Veo Veo</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#intro">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+            <li class="nav-item"><button class="btn btn-success ms-2 position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+              <i class="fas fa-shopping-cart"></i> Carrito
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount" style="display: none;">0</span>
+            </button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+    <main class="container my-5 px-3 px-md-5">
+    <!-- 1) INTRODUCCIÓN (mínimo 2 párrafos) -->
+    <section id="intro" class="mb-5 py-5  text-end text-md-center text-lg-start">
+        <h2 class="mb-3">Introducción a VeoVeo</h2>
+        <p >Lorem ipsum, dolor sit amet consectetur adipisicing elit. In error tenetur repellendus odio aut vitae, eum earum corrupti illo, saepe maxime at porro mollitia placeat repellat recusandae nisi hic nostrum.</p>
+    </section>
+    <section class="container border border-light my-5 bg-dark bg-gradient rounded-5  py-5 px-3 px-md-5" id="productos">
+            <h2 class="text-light text-center py-2 text-uppercase">Nuestros Mejores Vestidos</h2>
+               <div class="row text-black gy-3" id="productosContainer">
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class="guitarraVenta d-flex flex-column">
+                        <h3 class="fw-bold">Vestido 1</h3>
+                        <img class="img-fluid" src="" alt="Vestido 1">
+                        <p class="text-light lh-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex recusandae, vitae cum dolor mollitia esse voluptas aliquid quibusdam distinctio nobis eum fugiat nisi non voluptatibus quaerat asperiores repellendus tenetur unde?</p>
+                        <h4 class="mt-auto fw-bold text-light">Precio: $<span class="precio">50</span></h4>
+                        <div class="mt-2">
+                            <label class="form-label text-light mb-1">Talle</label>
+                            <select class="form-select talle-select" aria-label="Talle">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-lg mt-2 btn-primary comprar-btn" data-id="1" data-nombre="Vestido 1" data-precio="50">Comprar</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="guitarraVenta d-flex flex-column">
+                        <h3 class="fw-bold">Vestido 2</h3>
+                        <img class="img-fluid" src="" alt="Vestido 2">
+                        <p class="text-light lh-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex recusandae, vitae cum dolor mollitia esse voluptas aliquid quibusdam distinctio nobis eum fugiat nisi non voluptatibus quaerat asperiores repellendus tenetur unde?</p>
+                            <h4 class="mt-auto fw-bold text-light">Precio: $<span class="precio">75</span></h4>
+                                <div class="mt-2">
+                                    <label class="form-label text-light mb-1">Talle</label>
+                                    <select class="form-select talle-select" aria-label="Talle">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-lg mt-2 btn-primary comprar-btn" data-id="2" data-nombre="Vestido 2" data-precio="75">Comprar</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="guitarraVenta d-flex flex-column">
+                        <h3 class="fw-bold">Vestido 3</h3>
+                        <img class="img-fluid" src="" alt="Vestido 3">
+                        <p class="text-light lh-sm">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem officiis mollitia similique modi eos debitis illo ratione quo ab quasi ea, ipsam veritatis fuga ducimus perferendis! Dolorum ipsa optio cupiditate.</p>
+                            <h4 class="mt-auto fw-bold text-light">Precio: $<span class="precio">60</span></h4>
+                                <div class="mt-2">
+                                    <label class="form-label text-light mb-1">Talle</label>
+                                    <select class="form-select talle-select" aria-label="Talle">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-lg mt-2 btn-primary comprar-btn" data-id="3" data-nombre="Vestido 3" data-precio="60">Comprar</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-6">
+                    <div class="guitarraVenta d-flex flex-column">
+                        <h3 class="fw-bold">Vestido 4</h3>
+                        <img class="img-fluid" src="" alt="Vestido 4">
+                        <p class="text-light lh-sm">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis distinctio, incidunt aliquam, officiis amet voluptate porro animi vero asperiores officia consequatur odit ex? Porro labore quod ipsa eius sed reprehenderit!</p>
+                            <h4 class="mt-auto fw-bold text-light">Precio: $<span class="precio">80</span></h4>
+                                <div class="mt-2">
+                                    <label class="form-label text-light mb-1">Talle</label>
+                                    <select class="form-select talle-select" aria-label="Talle">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-lg mt-2 btn-primary comprar-btn" data-id="4" data-nombre="Vestido 4" data-precio="80">Comprar</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="guitarraVenta d-flex flex-column">
+                        <h3 class="fw-bold">Vestido 5</h3>
+                        <img class="img-fluid" src="" alt="Vestido 5">
+                        <p class="text-light lh-sm">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus cumque nesciunt facere libero earum quo aut reprehenderit consequuntur repellat, laborum soluta id tempora, nihil quis rem nobis asperiores consectetur saepe?</p>
+                            <h4 class="mt-auto fw-bold text-light">Precio: $<span class="precio">70</span></h4>
+                                <div class="mt-2">
+                                    <label class="form-label text-light mb-1">Talle</label>
+                                    <select class="form-select talle-select" aria-label="Talle">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-lg mt-2 btn-primary comprar-btn" data-id="5" data-nombre="Vestido 5" data-precio="70">Comprar</button>
+                    </div>
+                </div>
+               </div>
+        </section>
+
+    <!-- MODAL DEL CARRITO -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Mi Carrito de Compras</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems"></div>
+                    <div id="emptyCartMessage" class="text-center">
+                        <p class="text-muted">Tu carrito está vacío</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="me-auto">
+                        <h5>Total: $<span id="cartTotal">0</span></h5>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success" id="checkoutBtn" style="display: none;">Proceder a Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CONFIRMACIÓN DE COMPRA -->
+    <div class="modal fade" id="confirmacionModal" tabindex="-1" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header bg-info">
+                    <h5 class="modal-title" id="confirmacionModalLabel"><i class="fas fa-check-circle"></i> Confirmación de Compra</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="mb-4">Resumen de tu compra:</h5>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Talle</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resumenItems">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-secondary p-3 rounded mb-4">
+                        <h5>Total a pagar: $<span id="totalFinal">0.00</span></h5>
+                    </div>
+
+                    <form id="formularioConfirmacion" class="mb-4">
+                        <h5 class="mb-3">Datos para envío de confirmación:</h5>
+                        
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control form-control-lg" id="nombre" required placeholder="Tu nombre completo">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control form-control-lg" id="email" required placeholder="tu.email@ejemplo.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono (Opcional)</label>
+                            <input type="tel" class="form-control form-control-lg" id="telefono" placeholder="+54 9 11 1234-5678">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección de Entrega</label>
+                            <textarea class="form-control form-control-lg" id="direccion" rows="3" required placeholder="Calle, número, ciudad, provincia..."></textarea>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="terminos" required>
+                            <label class="form-check-label" for="terminos">
+                                Acepto los términos y condiciones de compra
+                            </label>
+                        </div>
+                    </form>
+
+                    <div id="mensajeEstado"></div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success btn-lg" id="btnConfirmar" onclick="confirmarCompra()">
+                        <i class="fas fa-check"></i> Confirmar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="carrito.js"></script>
+
+    <script>
+        // Endpoint de Formspree para enviar pedidos
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwpzgzqd';
+
+        // Función para mostrar confirmación de compra
+        function mostrarConfirmacion(items) {
+            // Llenar tabla de resumen
+            const resumenItems = document.getElementById('resumenItems');
+            let html = '';
+            let total = 0;
+
+            items.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                const talle = item.talle ? item.talle : 'N/A';
+                html += `
+                    <tr>
+                        <td>${item.nombre}</td>
+                        <td>$${item.precio.toFixed(2)}</td>
+                        <td>${talle}</td>
+                        <td>${item.cantidad}</td>
+                        <td>$${subtotal.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
+
+            resumenItems.innerHTML = html;
+            document.getElementById('totalFinal').textContent = total.toFixed(2);
+
+            // Mostrar modal de confirmación
+            const confirmacionModal = new bootstrap.Modal(document.getElementById('confirmacionModal'));
+            confirmacionModal.show();
+        }
+
+        // Función para confirmar compra
+        async function confirmarCompra() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const direccion = document.getElementById('direccion').value.trim();
+            const terminos = document.getElementById('terminos').checked;
+
+            // Validación
+            if (!nombre) { alert('Por favor ingresa tu nombre'); return; }
+            if (!email || !validarEmail(email)) { alert('Por favor ingresa un correo válido'); return; }
+            if (!direccion) { alert('Por favor ingresa tu dirección'); return; }
+            if (!terminos) { alert('Debes aceptar los términos y condiciones'); return; }
+
+            const mensajeEstado = document.getElementById('mensajeEstado');
+            mensajeEstado.innerHTML = '<div class="alert alert-info">Enviando pedido...</div>';
+
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+
+            // Construir texto legible para Formspree (se recibirá en el email)
+            let itemsTexto = '';
+            carrito.forEach(item => {
+                const talle = item.talle ? item.talle : 'N/A';
+                itemsTexto += `${item.nombre} - Talle: ${talle} - Cantidad: ${item.cantidad} - Precio: $${item.precio}\n`;
+            });
+
+            // Payload para Formspree
+            const payload = {
+                nombre: nombre,
+                email: email,
+                telefono: telefono,
+                direccion: direccion,
+                carrito: itemsTexto,
+                total: `$${total.toFixed(2)}`
+            };
+
+            try {
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    mensajeEstado.innerHTML = `<div class="alert alert-success"><i class="fas fa-check-circle"></i> Pedido enviado correctamente. Revisa tu email.</div>`;
+                    // Limpiar carrito y formulario
+                    localStorage.removeItem('carrito');
+                    document.getElementById('formularioConfirmacion').reset();
+                    setTimeout(() => {
+                        const confirmacionModal = bootstrap.Modal.getInstance(document.getElementById('confirmacionModal'));
+                        if (confirmacionModal) confirmacionModal.hide();
+                        location.reload();
+                    }, 2000);
+                } else {
+                    const text = await response.text();
+                    mensajeEstado.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i> Error enviando pedido: ${response.status} ${response.statusText}</div>`;
+                    console.error('Formspree response:', response.status, text);
+                }
+            } catch (err) {
+                console.error(err);
+                mensajeEstado.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-circle"></i> Error de red al enviar pedido.</div>`;
+            }
+        }
+
+        // Función para validar email
+        function validarEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        // Limpiar formulario al cerrar modal
+        document.getElementById('confirmacionModal').addEventListener('hidden.bs.modal', () => {
+            document.getElementById('formularioConfirmacion').reset();
+            document.getElementById('mensajeEstado').innerHTML = '';
+        });
+    </script>
+
+</body>
+</html>

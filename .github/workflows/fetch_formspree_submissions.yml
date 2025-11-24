@@ -1,0 +1,65 @@
+name: Sync Formspree Submissions to Repo [DESHABILITADO]
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 2 * * *' # Ejecuta diariamente a las 02:00 UTC (deshabilitado)
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch submissions from Formspree
+        env:
+          FORM_ID: xwpzgzqd
+          API_KEY: ${{ secrets.FORMSPREE_API_KEY }}
+        run: |
+          mkdir -p compras
+          echo "Fetching submissions for form $FORM_ID"
+          curl -s -H "Authorization: Bearer $API_KEY" "https://api.formspree.io/v1/forms/$FORM_ID/submissions?limit=100" -o submissions.json
+          if [ ! -s submissions.json ]; then echo "No submissions fetched"; exit 0; fi
+          python3 - <<'PY'
+import json,os
+with open('submissions.json','r',encoding='utf-8') as f:
+    data=json.load(f)
+# Formspree may return an object with key 'submissions' or 'data'
+subs = data.get('submissions') or data.get('data') or data
+if isinstance(subs, dict):
+    subs = [subs]
+outfile = 'compras/formspree_orders.json'
+existing = []
+if os.path.exists(outfile):
+    try:
+        with open(outfile,'r',encoding='utf-8') as ef:
+            existing = json.load(ef)
+    except Exception:
+        existing = []
+existing_ids = {item.get('id') for item in existing if isinstance(item, dict)}
+new_items = []
+for s in subs:
+    sid = s.get('id') or s.get('_id') or s.get('submission_id')
+    if sid and sid in existing_ids:
+        continue
+    new_items.append(s)
+if new_items:
+    existing.extend(new_items)
+    with open(outfile,'w',encoding='utf-8') as of:
+        json.dump(existing, of, ensure_ascii=False, indent=2)
+    print(f'Wrote {len(new_items)} new submissions to {outfile}')
+else:
+    print('No new submissions')
+PY
+
+      - name: Commit and push orders file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add compras/formspree_orders.json || true
+          git commit -m "Update Formspree orders" || echo "No changes to commit"
+          git push || echo "Push failed"

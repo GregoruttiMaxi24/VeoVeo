@@ -1,0 +1,43 @@
+# Ignorar archivos sensibles y temporales
+
+# Credenciales
+.env
+.env.local
+.env.*.local
+
+# Configuración personal
+config.local.php
+
+# Archivos de compra (datos sensibles)
+compras/
+logs/
+
+# Archivos de usuario
+uploads/
+temp/
+cache/
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencias
+vendor/
+node_modules/
+
+# Testing
+test_email.php
+*.test.php
+
+# Otros
+*.log
+.htaccess

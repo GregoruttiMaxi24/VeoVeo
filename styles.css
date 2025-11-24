@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #641111;
+    color: #dac9c9;
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+.guitarraVenta {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.guitarraVenta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(52, 131, 214, 0.3);
+}
+
+.guitarraVenta h3 {
+    color: #fff;
+}
+
+.guitarraVenta img {
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.comprar-btn {
+    transition: all 0.3s ease;
+}
+
+.comprar-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+/* Estilo para el badge del carrito */
+#cartBtn {
+    font-weight: bold;
+    min-width: 120px;
+}
+
+/* Estilos para el modal del carrito */
+.modal-content {
+    border: 2px solid #3483d6;
+}
+
+.modal-header {
+    background-color: #3483d6;
+    border-bottom: 2px solid #3483d6;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Estilos para tablas */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #3483d6;
+    border-color: #3483d6;
+    font-weight: bold;
+}
+
+.table-dark tbody tr:hover {
+    background-color: rgba(52, 131, 214, 0.1);
+}
+
+/* Estilos de formulario */
+.form-control, .form-control-lg {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #3483d6;
+    color: #fff;
+}
+
+.form-control:focus, .form-control-lg:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #3483d6;
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(52, 131, 214, 0.25);
+}
+
+.form-label {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Alertas de notificación */
+.alert {
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.alert-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #000;
+}
+
+/* Estilos de botones */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: bold;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.btn-primary {
+    background-color: #3483d6;
+    border-color: #3483d6;
+}
+
+.btn-primary:hover {
+    background-color: #2670c4;
+    border-color: #2670c4;
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.guitarraVenta {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .guitarraVenta {
+        margin-bottom: 15px;
+    }
+}
